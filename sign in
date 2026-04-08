@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in</title>
+    <style>
+        * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+  body {
+  background-color:rgb(52, 56, 56)
+}
+ 
+    </style>
+     <header class="site-header">
+        <div class="header-container">  
+          <div class="logo">  
+            <img src="https://img.icons8.com/?size=100&id=CurunfN7unTu&format=png&color=000000" alt="лого">
+          </div>
+          <nav class="nav-main"> 
+            <ul class="nav-list">
+              <li><a href="index.html">Главная</a></li>
+              <li><a href="#">Фильмы</a></li>
+              <li><a href="#">Сериалы</a></li>
+              <li><a href="#">Контакты</a></li>
+                
+            </ul>
+        
+          </nav>
+          <div class="auth-button">
+            <a href="index.html" class="signin-btn">
+                <i class="fas fa-user-plus"></i>
+                <span>Back</span>
+            </a>
+        </div>
+      </header>
+      <link rel="stylesheet" href="/src/style.css">
+</head>
+<body>
+ <!-- From Uiverse.io by bociKond --> 
+<form class="form">
+  <span class="input-span">
+    <label for="email" class="label">Email</label>
+    <input type="email" name="email" id="email"
+  /></span>
+  <span class="input-span">
+    <label for="password" class="label">Password</label>
+    <input type="password" name="password" id="password"
+  /></span>
+  <span class="span"><a href="#">Forgot password?</a></span>
+  <input class="submit" type="submit" value="Log in" />
+  <span class="span">Don't have an account? <a href="#">Sign up</a></span>
+</form>
+
+<footer class="cinema-footer">
+  <div class="footer-top">
+      <div class="footer-cta">
+          <h2>ПОЛУЧИТЕ 30 ДНЕЙ <br> БЕСПЛАТНОЙ ПОДПИСКИ</h2>
+          <p class="cta-desc">Смотрите тысячи фильмов и сериалов в Full HD и 4K без рекламы.</p>
+          <form class="footer-form">
+              <input type="email" placeholder="Ваш E-mail" required>
+              <div class="checkbox-group">
+                  <input type="checkbox" id="policy" checked>
+                  <label for="policy">Соглашаюсь с политикой конфиденциальности</label>
+              </div>
+              <button type="submit">ПОПРОБОВАТЬ БЕСПЛАТНО</button>
+          </form>
+      </div>
+      <div class="footer-image">
+          <img src="https://images.unsplash.com/photo-1574267432553-4b4628081c31?auto=format&fit=crop&q=80&w=1000" alt="Cinema background">
+      </div>
+  </div>
+
+  <div class="footer-bottom">
+      <div class="footer-content">
+          <div class="footer-brand">
+              <div class="logo">CINEMA<span>FLIX</span></div>
+              <p>Ваш персональный кинозал в любом месте и на любом устройстве.</p>
+          </div>
+
+          <div class="footer-links">
+              <div class="link-column">
+                  <h4>Разделы</h4>
+                  <a href="#">Фильмы</a>
+                  <a href="#">Сериалы</a>
+                  <a href="#">Мультфильмы</a>
+                  <a href="#">ТВ-каналы</a>
+              </div>
+              <div class="link-column">
+                  <h4>Поддержка</h4>
+                  <a href="#">О нас</a>
+                  <a href="#">Устройства</a>
+                  <a href="#">Вопросы и ответы</a>
+                  <a href="#">Акции</a>
+              </div>
+          </div>
+
+          <div class="footer-contacts">
+              <h4>Контакты</h4>
+              <p>Тел: 8 (800) 555-35-35</p>
+              <p>Email: support@cinemaflix.ru</p>
+              <div class="socials">
+                  <a href="#">Telegram</a>
+                  <a href="#">VK</a>
+                  <a href="#">YouTube</a>
+              </div>
+          </div>
+      </div>
+      
+      <div class="footer-copyright">
+          <p>© 2024 CinemaFlix Inc. Все права защищены.</p>
+          <a href="#">Сделано в ИТЕРАЦИЯ (Style)</a>
+      </div>
+  </div>
+</footer>
+      <script type="module" src="/src/main.js"></script>
+    </body>
+</body>
+</html>
