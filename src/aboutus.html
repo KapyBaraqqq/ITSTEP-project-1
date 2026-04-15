@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>CinemaFlix — Gallery</title>
     <link rel="stylesheet" href="style.css">
     
 </head>
-<body>
+<body class="about-page">
     <header class="site-header">
         <div class="header-container">  
           <div class="logo">  
@@ -16,10 +16,10 @@
           </div>
           <nav class="nav-main"> 
             <ul class="nav-list">
-              <li><a href="#">Главная</a></li>
-              <li><a href="#">Фильмы</a></li>
-              <li><a href="src/payment.html">Подписка</a></li>
-              <li><a href="src/aboutus.html">Информация</a></li>
+              <li><a href="../index.html">Главная</a></li>
+              <li><a href="../index.html#movies-anchor">Фильмы</a></li>
+              <li><a href="payment.html">Подписка</a></li>
+              <li><a href="aboutus.html">Информация</a></li>
                  
             </ul>
         
@@ -31,34 +31,62 @@
             </a>
         </div>
       </header>
-      <section class="about-section">
-        <div class="container">
-            <div class="about-content">
-                <h1 class="title">About us</h1>
-                <p class="description">
-                    Онлайн-кинотеатр — это стриминговая платформа, предоставляющая легальный доступ к фильмам, сериалам, мультфильмам и ТВ-каналам через интернет. Пользователи смотрят контент в высоком качестве на различных устройствах (Smart TV, смартфоны, ПК) по подписке или за отдельную плату, используя рекомендации и персональные профили
-                </p>
-                <p class="description">
-                    Вы приходите домой и включаете любимый стриминг. Лента сразу же выдаёт вам несколько фильмов и сериалов, которые… действительно хочется смотреть.
-                </p>
+      <main class="about-main">
+        <section class="gallery-shell">
+          <div class="gallery-header">
+            <h1 class="gallery-title">Cinematic Gallery</h1>
+            <p class="gallery-subtitle">Наведи на карточку — и фон станет “живым”, как свет от экрана в зале.</p>
+          </div>
 
-                <div class="stats">
-                    <div class="stat-item">
-                        <span class="stat-number">10,000+</span>
-                        <span class="stat-label">Movies</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">5,000+</span>
-                        <span class="stat-label">Series</span>
-                    </div>
-                </div>
+          <div class="movie-gallery" aria-label="Movie gallery">
+            <div class="movie-card" data-color="#ff3b30">
+              <div class="movie-poster" role="img" aria-label="Action movie poster"
+                   style="background-image:url('https://images.unsplash.com/photo-1524985069026-dd778a71c7b4?auto=format&fit=crop&w=1200&q=80');"></div>
+              <div class="movie-meta">
+                <h3 class="movie-title">Redline Chase</h3>
+                <p class="movie-genre">Action • 2026</p>
+              </div>
             </div>
 
-            <div class="about-visual">
-                <img src="https://rest.mooon.by/static/uploads/images/danaMall-cinema.jpg" alt="About Us visual" class="about-img">
+            <div class="movie-card" data-color="#00ced1">
+              <div class="movie-poster" role="img" aria-label="Sci-fi movie poster"
+                   style="background-image:url('https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=1200&q=80');"></div>
+              <div class="movie-meta">
+                <h3 class="movie-title">Neon Orbit</h3>
+                <p class="movie-genre">Sci‑Fi • 2025</p>
+              </div>
             </div>
-        </div>
-    </section>
+
+            <div class="movie-card" data-color="#9b5cff">
+              <div class="movie-poster" role="img" aria-label="Fantasy movie poster"
+                   style="background-image:url('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=80');"></div>
+              <div class="movie-meta">
+                <h3 class="movie-title">Violet Kingdom</h3>
+                <p class="movie-genre">Fantasy • 2024</p>
+              </div>
+            </div>
+
+            <div class="movie-card" data-color="#ffb020">
+              <div class="movie-poster" role="img" aria-label="Adventure movie poster"
+                   style="background-image:url('https://images.unsplash.com/photo-1535016120720-40c646be5580?auto=format&fit=crop&w=1200&q=80');"></div>
+              <div class="movie-meta">
+                <h3 class="movie-title">Golden Horizon</h3>
+                <p class="movie-genre">Adventure • 2026</p>
+              </div>
+            </div>
+
+            <div class="movie-card" data-color="#2ce36b">
+              <div class="movie-poster" role="img" aria-label="Thriller movie poster"
+                   style="background-image:url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1200&q=80');"></div>
+              <div class="movie-meta">
+                <h3 class="movie-title">Greenroom Signal</h3>
+                <p class="movie-genre">Thriller • 2025</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
     <footer class="cinema-footer">
         <div class="footer-top">
             <div class="footer-cta">
@@ -120,5 +148,6 @@
             </div>
         </div>
       </footer>
+      <script type="module" src="./aboutus.js"></script>
 </body>
 </html>

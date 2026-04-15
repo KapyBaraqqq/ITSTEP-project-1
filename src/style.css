@@ -3,6 +3,24 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+html { scroll-behavior: smooth; }
+
+:root {
+  --ambient-color: #101010;
+  --glass-bg: rgba(255, 255, 255, 0.08);
+  --glass-border: rgba(255, 255, 255, 0.14);
+  --glass-highlight: rgba(255, 255, 255, 0.22);
+  --text-strong: rgba(255, 255, 255, 0.92);
+  --text-soft: rgba(255, 255, 255, 0.72);
+}
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--ambient-color);
+  transition: background-color 0.8s ease;
+}
+
 .site-header {
   width: 100%;
   height: 101px;
@@ -222,7 +240,120 @@
     --text-gray: #a3a3a3;
 }
 
-body { margin: 0; font-family: 'Segoe UI', sans-serif; }
+/* ====================================================================== */
+/* About page — cinematic gallery */
+.about-page {
+  min-height: 100vh;
+  position: relative;
+  isolation: isolate;
+}
+
+.about-page::before {
+  content: "";
+  position: fixed;
+  inset: -30vh -30vw;
+  z-index: -1;
+  background:
+    radial-gradient(45rem 30rem at 20% 15%, color-mix(in srgb, var(--ambient-color) 70%, white 10%), transparent 65%),
+    radial-gradient(40rem 26rem at 80% 20%, color-mix(in srgb, var(--ambient-color) 70%, white 8%), transparent 60%),
+    radial-gradient(50rem 34rem at 50% 85%, color-mix(in srgb, var(--ambient-color) 75%, black 10%), transparent 65%);
+  filter: blur(24px);
+  opacity: 0.8;
+  transition: background-color 0.8s ease;
+}
+
+.about-main {
+  padding: 48px 20px 70px;
+  background:
+    linear-gradient(to bottom, rgba(0,0,0,0.15), rgba(0,0,0,0.35));
+}
+
+.gallery-shell {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gallery-header {
+  margin-bottom: 26px;
+}
+
+.gallery-title {
+  color: var(--text-strong);
+  font-size: clamp(28px, 3.2vw, 48px);
+  letter-spacing: 0.5px;
+  font-weight: 800;
+}
+
+.gallery-subtitle {
+  margin-top: 10px;
+  max-width: 64ch;
+  color: var(--text-soft);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.movie-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+  align-items: stretch;
+}
+
+.about-page .movie-card {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 18px;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.35),
+    inset 0 1px 0 rgba(255,255,255,0.08);
+  transform: translateY(0);
+  transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+  cursor: default;
+}
+
+.about-page .movie-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  border-color: var(--glass-highlight);
+  box-shadow:
+    0 18px 44px rgba(0,0,0,0.45),
+    0 0 0 1px rgba(255,255,255,0.06) inset;
+}
+
+.movie-poster {
+  aspect-ratio: 2 / 3;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.movie-poster::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to bottom, rgba(0,0,0,0.05), rgba(0,0,0,0.55));
+}
+
+.movie-meta {
+  padding: 14px 14px 16px;
+}
+
+.movie-title {
+  color: var(--text-strong);
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+}
+
+.movie-genre {
+  margin-top: 6px;
+  color: var(--text-soft);
+  font-size: 13px;
+}
 
 .cinema-footer {
     background-color: var(--bg-dark);

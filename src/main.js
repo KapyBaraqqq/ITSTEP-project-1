@@ -127,30 +127,4 @@ document.addEventListener('DOMContentLoaded', () => {
   loadPopularMovies(); // Загружаем фильмы
   initSlider(); // Инициализируем слайдер
 });
-//  бубубубубубубубубубубубубу
-document.addEventListener('DOMContentLoaded', () => {
- 
-  const moviesLink = document.querySelector('.nav-list li a[href="#"]:nth-child(1)'); 
- 
-  const allLinks = document.querySelectorAll('.nav-list a');
-  const targetLink = Array.from(allLinks).find(link => link.textContent === 'Фильмы');
-
-  if (targetLink) {
-      targetLink.addEventListener('click', (e) => {
-          e.preventDefault();  
-
-          const moviesSection = document.getElementById('movies-anchor');
-          
-          if (moviesSection) {
- 
-              const headerHeight = 80; 
-              const targetPosition = moviesSection.getBoundingClientRect().top + window.pageYOffset - headerHeight;
-
-              window.scrollTo({
-                  top: targetPosition,
-                  behavior: 'smooth'  
-              });
-          }
-      });
-  }
-});
+// Smooth-scroll is handled by anchor links + CSS (see `html { scroll-behavior: smooth; }`)
