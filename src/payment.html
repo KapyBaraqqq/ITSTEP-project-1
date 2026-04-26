@@ -5,204 +5,216 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Payment</title>
-    <header class="site-header">
-        <div class="header-container">  
-          <div class="logo">  
-            <img src="https://img.icons8.com/?size=100&id=CurunfN7unTu&format=png&color=000000" alt="лого">
-          </div>
-          <nav class="nav-main"> 
-            <ul class="nav-list">
-              <li><a href="../index.html">Главная</a></li>
-              <li><a href="../index.html#movies-anchor">Фильмы</a></li>
-              <li><a href="payment.html">Подписка</a></li>
-              <li><a href="aboutus.html">Информация</a></li>
-            </ul>
-          </nav>
-          <div class="auth-button">
-            <a href="sign in" class="signin-btn">
-                <i class="fas fa-user-plus"></i>
-                <span>sign in</span>
-            </a>
-        </div>
-      </header>
-      <style>
- :root {
-  --bg-dark: #0f0f0f;
-  --panel-bg: #1a1a1a;
-  --accent-pink: #e91e63;
-  --text-gray: #b0b0b0;
-}
-
-body {
-  background-color: var(--bg-dark);
-  color: white;
-  font-family: 'Inter', sans-serif;
-  margin: 0;
-}
-
-.main-container {
-  display: flex;
-  padding: 40px;
-  gap: 50px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
- 
-.sidebar {
-  width: 250px;
-  display: flex;
-  flex-direction: column;
-}
-
-.user-avatar {
-  width: 80px;
-  height: 80px;
-  background: linear-gradient(45deg, #ccc, #eee);
-  border-radius: 15px;
-  margin-bottom: 15px;
-}
-
-.nav-item {
-  display: block;
-  padding: 12px 20px;
-  color: var(--text-gray);
-  text-decoration: none;
-  border-radius: 10px;
-  margin-bottom: 5px;
-}
-
-.nav-item.active {
-  background-color: var(--accent-pink);
-  color: white;
-}
-
- 
-.plans-list {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 20px;
-  padding: 20px;
-  margin-bottom: 40px;
-}
-
-.plan-row {
-  display: flex;
-  justify-content: space-between;
-  padding: 15px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  font-size: 1.1rem;
-}
-
-.total-row {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 20px;
-  margin-top: 20px;
-}
-
-.renew-btn {
-  background-color: var(--accent-pink);
-  border: none;
-  padding: 10px 30px;
-  border-radius: 20px;
-  color: white;
-  cursor: pointer;
-}
-
- 
-.upgrade-card {
-  background: linear-gradient(135deg, #121212 0%, #1e1e1e 100%);
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 20px;
-  display: flex;
-  padding: 30px;
-  justify-content: space-between;
-}
-
-.price-tag {
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.add-to-cart {
-  background-color: var(--accent-pink);
-  border: none;
-  padding: 12px 25px;
-  border-radius: 10px;
-  color: white;
-  width: 100%;
-}
-      </style>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/payment.css">
 </head>
-<link rel="stylesheet" href="style.css">
-<body>
-  
-  <main class="main-container">
-    <aside class="sidebar">
-      <div class="user-profile">
-        <div class="user-avatar"></div>
-        <p class="user-email">myemailaddress@gmail.com</p>
-        <div class="subscription-status">
-          Your subscriptions are valid until <br> <strong>25.12.2027</strong>
-        </div>
+<body class="payment-page">
+  <header class="site-header">
+    <div class="header-container">  
+      <div class="logo">  
+        <img src="https://img.icons8.com/?size=100&id=CurunfN7unTu&format=png&color=000000" alt="лого">
       </div>
-  
-      <nav class="side-nav">
-        <a href="#" class="nav-item"><i class="icon-profile"></i> Profile</a>
-        <a href="#" class="nav-item active"><i class="icon-plans"></i> Plans</a>
-        <a href="#" class="nav-item"><i class="icon-payments"></i> Payments</a>
+      <nav class="nav-main"> 
+        <ul class="nav-list">
+          <li><a href="../index.html">Главная</a></li>
+          <li><a href="../index.html#movies-anchor">Фильмы</a></li>
+          <li><a href="payment.html">Подписка</a></li>
+          <li><a href="aboutus.html">Информация</a></li>
+        </ul>
       </nav>
-  
-      <button class="logout-btn">Log out</button>
-    </aside>
-  
-    <section class="plans-content">
-      <h2 class="section-title">Plans</h2>
-      
-      <div class="plans-list">
-        <div class="plan-row">
-          <span>OnAir Freemium</span>
-          <span>₦3,500</span>
-        </div>
-        <div class="plan-row">
-          <span>OnAir Premium</span>
-          <span>₦6,500</span>
-        </div>
-        <div class="plan-row">
-          <span>OnAir Premium 2</span>
-          <span>₦8,500</span>
-        </div>
-        <div class="total-row">
-          <button class="renew-btn">Renew</button>
-          <div class="total-price">Total: <span>₦18,500</span></div>
+      <div class="auth-button">
+        <a href="sign in" class="signin-btn">
+          <i class="fas fa-user-plus"></i>
+          <span>sign in</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="pay-shell">
+    <section class="pay-hero">
+      <div class="pay-hero__content">
+        <div class="pay-kicker">Подписка</div>
+        <h1 class="pay-title">Upgrade your cinema nights</h1>
+        <p class="pay-subtitle">One clean plan, instant access, cancel anytime. Your payment is protected with modern encryption.</p>
+        <div class="pay-badges" aria-label="Trust badges">
+          <div class="pay-badge">SSL Secure</div>
+          <div class="pay-badge">No ads</div>
+          <div class="pay-badge">4K + HDR</div>
+          <div class="pay-badge">Cancel anytime</div>
         </div>
       </div>
-  
-      <div class="upgrade-section">
-        <h3 class="upgrade-title">Upgrade your service</h3>
-        <div class="upgrade-card">
-          <div class="card-info">
-              <div class="badge">OnAir Freemium</div>
-              <h4>Watch 50 live TV channels</h4>
-              <p>Stream live TV Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.</p>
-              <div class="channel-icons">
-                  <div class="placeholder-icon">ABC</div>
-                  <div class="placeholder-icon">CBS</div>
-                  <div class="placeholder-icon">FOX</div>
+    </section>
+
+    <section class="pay-grid">
+      <aside class="pay-profile">
+        <div class="pay-card pay-profile__card">
+          <div class="pay-avatar" aria-hidden="true"></div>
+          <div class="pay-email">myemailaddress@gmail.com</div>
+          <div class="pay-status">
+            Your subscriptions are valid until <strong>25.12.2027</strong>
+          </div>
+          <div class="pay-mini-divider"></div>
+          <nav class="pay-nav" aria-label="Account">
+            <a href="#" class="pay-nav__item">Profile</a>
+            <a href="#" class="pay-nav__item is-active">Plans</a>
+            <a href="#" class="pay-nav__item">Payments</a>
+          </nav>
+          <button class="pay-ghost-btn" type="button">Log out</button>
+        </div>
+
+        <div class="pay-card pay-security">
+          <div class="pay-security__title">Protected checkout</div>
+          <div class="pay-security__list">
+            <div class="pay-security__item">
+              <span class="pay-dot" aria-hidden="true"></span>
+              Card data never stored on this device
+            </div>
+            <div class="pay-security__item">
+              <span class="pay-dot" aria-hidden="true"></span>
+              256‑bit encryption in transit
+            </div>
+            <div class="pay-security__item">
+              <span class="pay-dot" aria-hidden="true"></span>
+              Instant receipt to your email
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <div class="pay-main">
+        <div class="pay-card pay-plans">
+          <div class="pay-card__header">
+            <h2 class="pay-card__title">Choose your plan</h2>
+            <div class="pay-chip">Best value</div>
+          </div>
+
+          <div class="pay-plan-list" role="list">
+            <div class="pay-plan" role="listitem">
+              <div class="pay-plan__left">
+                <div class="pay-plan__name">Freemium</div>
+                <div class="pay-plan__desc">Starter access</div>
               </div>
+              <div class="pay-plan__price">₦3,500</div>
+            </div>
+            <div class="pay-plan is-featured" role="listitem">
+              <div class="pay-plan__left">
+                <div class="pay-plan__name">Premium</div>
+                <div class="pay-plan__desc">Full library + 4K</div>
+              </div>
+              <div class="pay-plan__price">₦6,500</div>
+            </div>
+            <div class="pay-plan" role="listitem">
+              <div class="pay-plan__left">
+                <div class="pay-plan__name">Premium Plus</div>
+                <div class="pay-plan__desc">Family plan (4 screens)</div>
+              </div>
+              <div class="pay-plan__price">₦8,500</div>
+            </div>
           </div>
-          
-          <div class="card-action">
-              <div class="price-tag">₦6,500</div>
-              <button class="add-to-cart">Add to Cart</button>
+
+          <div class="pay-summary">
+            <div class="pay-summary__row">
+              <span>Total</span>
+              <strong>₦18,500</strong>
+            </div>
+            <button class="pay-primary-btn" type="button">Renew subscription</button>
+            <div class="pay-note">You can cancel anytime in Profile → Plans.</div>
           </div>
+        </div>
+
+        <div class="pay-card pay-checkout">
+          <div class="pay-card__header">
+            <h2 class="pay-card__title">Secure checkout</h2>
+            <div class="pay-kbd">Ctrl + Enter</div>
+          </div>
+
+          <div class="pay-card-preview" aria-label="Card preview">
+            <div class="pay-card-preview__shine" aria-hidden="true"></div>
+            <div class="pay-card-preview__brand">CINEMAFLIX</div>
+            <div class="pay-card-preview__number" id="cardNumberPreview">•••• •••• •••• 4287</div>
+            <div class="pay-card-preview__row">
+              <div>
+                <div class="pay-card-preview__label">CARDHOLDER</div>
+                <div class="pay-card-preview__value" id="cardNamePreview">YOUR NAME</div>
+              </div>
+              <div>
+                <div class="pay-card-preview__label">EXPIRES</div>
+                <div class="pay-card-preview__value" id="cardExpPreview">12/29</div>
+              </div>
+            </div>
+          </div>
+
+          <form class="pay-form" autocomplete="on">
+            <div class="pay-field">
+              <label class="pay-label" for="cardName">Cardholder name</label>
+              <input class="pay-input" id="cardName" name="cardName" type="text" placeholder="e.g. Alex K." maxlength="28" />
+            </div>
+
+            <div class="pay-field">
+              <label class="pay-label" for="cardNumber">Card number</label>
+              <input class="pay-input" id="cardNumber" name="cardNumber" inputmode="numeric" placeholder="1234 5678 9012 3456" maxlength="19" />
+            </div>
+
+            <div class="pay-row">
+              <div class="pay-field">
+                <label class="pay-label" for="cardExp">Expiry</label>
+                <input class="pay-input" id="cardExp" name="cardExp" inputmode="numeric" placeholder="MM/YY" maxlength="5" />
+              </div>
+              <div class="pay-field">
+                <label class="pay-label" for="cardCvv">CVV</label>
+                <input class="pay-input" id="cardCvv" name="cardCvv" inputmode="numeric" placeholder="123" maxlength="3" />
+              </div>
+            </div>
+
+            <button class="pay-primary-btn pay-primary-btn--wide" type="submit">Pay ₦18,500</button>
+            <div class="pay-note">By paying, you agree to the terms and recurring billing.</div>
+          </form>
         </div>
       </div>
     </section>
   </main>
-  </main>
+
+  <script>
+    (function () {
+      const nameEl = document.getElementById('cardName');
+      const numberEl = document.getElementById('cardNumber');
+      const expEl = document.getElementById('cardExp');
+
+      const namePrev = document.getElementById('cardNamePreview');
+      const numberPrev = document.getElementById('cardNumberPreview');
+      const expPrev = document.getElementById('cardExpPreview');
+
+      function onlyDigits(s) { return (s || '').replace(/\D/g, ''); }
+      function chunk4(s) { return s.replace(/(.{4})/g, '$1 ').trim(); }
+      function maskNumber(s) {
+        const digits = onlyDigits(s).slice(0, 16);
+        const last4 = digits.slice(-4).padStart(4, '•');
+        return '•••• •••• •••• ' + last4;
+      }
+      function formatNumberInput(s) { return chunk4(onlyDigits(s).slice(0, 16)); }
+      function formatExpInput(s) {
+        const digits = onlyDigits(s).slice(0, 4);
+        if (digits.length <= 2) return digits;
+        return digits.slice(0, 2) + '/' + digits.slice(2);
+      }
+
+      nameEl?.addEventListener('input', () => {
+        const v = (nameEl.value || '').trim();
+        namePrev.textContent = v ? v.toUpperCase() : 'YOUR NAME';
+      });
+
+      numberEl?.addEventListener('input', () => {
+        numberEl.value = formatNumberInput(numberEl.value);
+        numberPrev.textContent = maskNumber(numberEl.value);
+      });
+
+      expEl?.addEventListener('input', () => {
+        expEl.value = formatExpInput(expEl.value);
+        expPrev.textContent = expEl.value || '12/29';
+      });
+    })();
+  </script>
   <footer class="cinema-footer">
     <div class="footer-top">
         <div class="footer-cta">
