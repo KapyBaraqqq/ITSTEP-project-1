@@ -1,11 +1,67 @@
-import './style.css'
 import { kinopoiskApi } from './kinopoiskApi.js';
 
-// --- Функция для отрисовки карточек фильмов на странице ---
+function initRegisterModal() {
+  const modal = document.getElementById('registerModal');
+  if (!modal) return;
+
+  const openBtn = document.getElementById('openRegisterBtn');
+  const closeEls = modal.querySelectorAll('[data-auth-close]');
+  const dialog = modal.querySelector('.auth-modal__dialog');
+  const form = document.getElementById('registerForm');
+
+  function open() {
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    const firstInput = modal.querySelector('input');
+    firstInput?.focus?.();
+  }
+
+  function close() {
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    openBtn?.focus?.();
+  }
+
+  openBtn?.addEventListener('click', (e) => {
+    e.preventDefault();
+    if (window.location.hash !== '#register') window.location.hash = 'register';
+    open();
+  });
+
+  closeEls.forEach((el) => el.addEventListener('click', close));
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('is-open')) close();
+  });
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) close();
+  });
+
+  dialog?.addEventListener('click', (e) => e.stopPropagation());
+
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const fd = new FormData(form);
+    const password = String(fd.get('password') || '');
+    const confirm = String(fd.get('passwordConfirm') || '');
+    if (password !== confirm) {
+      alert('Passwords do not match');
+      return;
+    }
+    alert('Account created (demo)');
+    form.reset();
+    close();
+  });
+
+  if (window.location.hash === '#register') open();
+}
+
 function renderMovies(movieData) {
   const app = document.getElementById('app');
   
-  // Создаем контейнер для фильмов, если его еще нет
   let movieGrid = document.getElementById('movieGrid');
   if (!movieGrid) {
     movieGrid = document.createElement('div');
@@ -17,9 +73,8 @@ function renderMovies(movieData) {
     app.appendChild(movieGrid);
   }
 
-  movieGrid.innerHTML = ''; // Очищаем сетку перед добавлением новых карточек
+  movieGrid.innerHTML = '';
 
-  // Определяем, где лежит массив фильмов в полученных данных
   const films = movieData.items || movieData.films || movieData;
 
   if (!films || films.length === 0) {
@@ -27,7 +82,6 @@ function renderMovies(movieData) {
     return;
   }
 
-  // Перебираем все фильмы и создаем для каждого HTML-карточку
   films.forEach(movie => {
     const poster = movie.posterUrl || movie.posterUrlPreview || 'https://via.placeholder.com/300x450?text=No+Poster';
     const title = movie.nameRu || movie.nameEn || 'Без названия';
@@ -46,7 +100,6 @@ function renderMovies(movieData) {
     movieGrid.appendChild(card);
   });
 
-  // Добавляем обработчики событий на все кнопки "Трейлер"
   document.querySelectorAll('.details-btn').forEach(btn => {
     btn.addEventListener('click', async (e) => {
       const filmId = e.target.dataset.id;
@@ -66,7 +119,6 @@ function renderMovies(movieData) {
   });
 }
 
-// --- Функция для загрузки популярных фильмов при старте ---
 async function loadPopularMovies() {
   try {
     const app = document.getElementById('app');
@@ -78,7 +130,7 @@ async function loadPopularMovies() {
     app.innerHTML = '<p style="color: white;">Загрузка фильмов...</p>';
     
     const data = await kinopoiskApi.getPopularMovies(1);
-    console.log('Полученные данные:', data); // Проверяем в консоли
+    console.log('Полученные данные:', data);
     
     renderMovies(data);
   } catch (error) {
@@ -90,7 +142,6 @@ async function loadPopularMovies() {
   }
 }
 
-// --- Код для слайдера ---
 function initSlider() {
   const slides = document.querySelectorAll('.slide');
   const nextBtn = document.querySelector('.next-btn');
@@ -121,10 +172,9 @@ function initSlider() {
   prevBtn.addEventListener('click', () => showSlide(currentIndex - 1));
 }
 
-// --- Запускаем всё при загрузке страницы ---
 document.addEventListener('DOMContentLoaded', () => {
   console.log('Страница загружена, запускаем...');
-  loadPopularMovies(); // Загружаем фильмы
-  initSlider(); // Инициализируем слайдер
+  initRegisterModal();
+  loadPopularMovies();
+  initSlider();
 });
-// Smooth-scroll is handled by anchor links + CSS (see `html { scroll-behavior: smooth; }`)
